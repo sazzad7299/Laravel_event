@@ -16,7 +16,7 @@
                 <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="row time-countdown justify-content-center wow fadeInUp" data-wow-delay="0.2s">
                     <div id="item" class="time-count">
-                        <div class="time-entry days"><span>0</span>Completed Event</div>
+                        <a style="course:pointer" onclick="comEVT()" class="time-entry days"><span>0</span>Completed Event</a>
                         <div class="time-entry hours"><span>00</span> On Going</div>
                         <div class="time-entry minutes"><span>00</span> Upcomming</div>
                         <div class="time-entry seconds"><span><i class="lni lni-user"></i></span> Profile</div> </div>
@@ -27,5 +27,5 @@
             </div>
         </section>
         <!-- Coundown Section End -->
-    </div>
+    </div>    
 @endsection

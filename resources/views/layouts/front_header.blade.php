@@ -66,7 +66,7 @@
                   </a>
 
                   <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="/home">Dashboard</a>
+                    <a class="dropdown-item" href="/home">Dashboard2</a>
                          
                     <a class="dropdown-item" href="{{ route('logout') }}"
                         onclick="event.preventDefault();
@@ -112,7 +112,7 @@
           <a class="page-scroll" href="#sponsors">Sponsors</a>
         </li>
         <li>
-          <a class="page-scroll" href="#pricing">pricing</a>
+          <a class="page-scroll" href="#pricing">Pricing</a>
         </li>
         <li>
           <a class="page-scroll" href="#google-map-area">Contact</a>

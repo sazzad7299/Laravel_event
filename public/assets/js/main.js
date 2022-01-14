@@ -80,6 +80,9 @@
   });      
 
 }(jQuery));
-function comEVT(){
-  alert("hello");
-}
+
+$(document).ready(function(){
+  $("#myBtn").click(function(){
+    $("#myModal").modal();
+  });
+});

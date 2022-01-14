@@ -54,7 +54,7 @@
             data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Custom Utilities:</h6>
-                <a class="collapse-item" href="">All </a>
+                <a class="collapse-item" href="{{route('allCategory')}}">All Category</a>
                 {{-- <a class="collapse-item" href="{{route('editCategory')}}">Edit</a> --}}
                 
             </div>

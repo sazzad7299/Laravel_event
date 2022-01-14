@@ -1,4 +1,5 @@
 @include('backend.layouts.header')
+
     <!-- Page Wrapper -->
     <div id="wrapper">
        @include('backend.layouts.sidebar')
@@ -7,6 +8,8 @@
             <!-- Main Content -->
             <div id="content">
                @include('backend.layouts.topbar')
+               @include('backend.notification')
+
                @yield('main_content')
             </div>
             <!-- End of Main Content -->

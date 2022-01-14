@@ -2,26 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\backend\adminController;
+use App\Http\Controllers\backend\CategoriesController;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
 Route::get('/',[App\Http\Controllers\indexController::class, 'index'])->name('index');
-
-
-
-
 
 
 
@@ -34,3 +18,11 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/dashboard',[adminController::class, 'index'])->name('admin.home');
 
 
+//Category Controller
+Route::get('/category-all',[CategoriesController::class,'allCategory'])->name('allCategory');
+Route::get('/category-form',[CategoriesController::class,'addCategoryForm'])->name('addCategoryForm');
+
+Route::post('/add-category',[CategoriesController::class,'storeCategory'])->name('storeCategory');
+Route::get('/delete-category/{id}',[CategoriesController::class,'deleteCategory'])->name('deleteCategory');
+Route::get('/edit-category/{id}',[CategoriesController::class,'editCategory'])->name('editCategory');
+Route::post('/update-category/{id}',[CategoriesController::class,'updateCategory'])->name('updateCategory');

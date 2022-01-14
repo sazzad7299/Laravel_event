@@ -1,4 +1,5 @@
 @extends('layouts.front_master')
+@include('layouts.slider')
 @section('content')
 
     <!-- Coundown Section Start -->

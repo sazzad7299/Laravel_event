@@ -103,7 +103,7 @@
           <a class="page-scroll" href="#sponsors">Sponsors</a>
         </li>
         <li>
-          <a class="page-scroll" href="#pricing">pricing</a>
+          <a class="page-scroll" href="#pricing">Pricing</a>
         </li>
         <li>
           <a class="page-scroll" href="#google-map-area">Contact</a>

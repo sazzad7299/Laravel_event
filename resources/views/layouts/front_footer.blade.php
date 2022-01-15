@@ -75,7 +75,7 @@
           <div class="row">
             <div class="col-md-12">
               <div class="site-info">
-                <p>© Designed and Developed by <a href="http://uideck.com" rel="nofollow">UIdeck</a></p>
+                <p>© Designed and Developed by <a href="" rel="nofollow"></a></p>
               </div>      
             </div>
           </div>

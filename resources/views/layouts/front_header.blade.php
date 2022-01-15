@@ -11,45 +11,37 @@
             <span class="icon-menu"></span>
             <span class="icon-menu"></span>
           </button>
-          <a href="index.html" class="navbar-brand"><img src="assets/img/logo.png" alt=""></a>
+          <a href="{{route('index')}}" class="navbar-brand"><img src="assets/img/logo.png" alt=""></a>
         </div>
         <div class="collapse navbar-collapse" id="main-navbar">
           <ul class="navbar-nav mr-auto w-100 justify-content-end">
             <li class="nav-item active">
-              <a class="nav-link" href="#header-wrap">
+              <a class="nav-link" href="{{route('index')}}">
                 Home
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#about">
-                About
+              <a class="nav-link" href="{{route('show_cat_all')}}">
+                Categories
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#schedules">
+              <a class="nav-link"  href="{{route('schedules')}}">
                 schedules
               </a>
             </li>
+
             <li class="nav-item">
-              <a class="nav-link" href="#team">
-                Speakers
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#gallery">
+              <a class="nav-link" href="{{route('gallery')}}">
                 Gallery
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#faq">
-                Faq
+              <a class="nav-link" href="{{route('about')}}">
+                About
               </a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#sponsors">
-                Sponsors
-              </a>
-            </li>
+
             @guest
             <li class="nav-item">
               <a class="nav-link" href="{{ route('login') }}">

@@ -38,6 +38,13 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/dashboard',[adminController::class, 'index'])->name('admin.home');
+Route::get('/admin/login',[adminController::class, 'loginForm'])->name('admin.login');
+Route::post('/login-save',[adminController::class, 'submit_login'])->name('admin.loginSave');
+Route::get('/login/logout',[adminController::class, 'logout'])->name('admin.logout');
+
+
+
+
 
 
 //Category Controller

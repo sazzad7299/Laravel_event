@@ -16,9 +16,6 @@ use App\Http\Controllers\backend\CategoriesController;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
 Route::get('/',[App\Http\Controllers\IndexController::class, 'index'])->name('index');
 
 
@@ -33,9 +30,6 @@ Route::match(['get','post'],'delete-slider/{id}',[App\Http\Controllers\SliderCon
 
 
 Route::get('/',[App\Http\Controllers\indexController::class, 'index'])->name('index');
-
-
-
 
 //backend start
 

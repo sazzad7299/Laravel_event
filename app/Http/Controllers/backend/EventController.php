@@ -51,6 +51,11 @@ class EventController extends Controller
         $event->detail = $request->detail;
         $event->venue = $request->venue;
         $event->end_date = $request->end_date;
+        $event->start_date = $request->start_date;
+        $event->seat = $request->seat;
+
+
+
         $event->image = $name;
         $event->status = $request->status;
         $event->category_id = $request->category_id;
@@ -78,6 +83,9 @@ class EventController extends Controller
         $event->detail = $request->detail;
         $event->venue = $request->venue;
         $event->end_date = $request->end_date;
+        $event->start_date = $request->start_date;
+        $event->seat = $request->seat;
+
         $event->status = $request->status;
         $event->category_id = $request->category_id;
         $event->save();

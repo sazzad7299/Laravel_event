@@ -16,13 +16,16 @@ class CreateEventsTable extends Migration
         Schema::create('events', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->string('detail');
+            $table->text('detail');
             $table->string('venue');
             $table->string('image');
             $table->integer('category_id');
-
             $table->enum('status',['active','inactive'])->default('inactive');
             $table->date('end_date');
+            $table->date('start_date');
+            $table->integer('seat');
+
+
             $table->timestamps();
         });
     }

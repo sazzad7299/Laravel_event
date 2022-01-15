@@ -46,7 +46,7 @@
                 @enderror
               </div>
 
-          <div>
+            <div>
               <img height="150" width="150" src="{{asset('images/category/'.$category->photo)}}" alt="">
             </div>
             <div class="form-group">

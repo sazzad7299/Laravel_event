@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\backend\adminController;
 use App\Http\Controllers\backend\CategoriesController;
+use App\Http\Controllers\backend\EventController;
+
 
 
 /*
@@ -61,3 +63,14 @@ Route::post('/add-category',[CategoriesController::class,'storeCategory'])->name
 Route::get('/delete-category/{id}',[CategoriesController::class,'deleteCategory'])->name('deleteCategory');
 Route::get('/edit-category/{id}',[CategoriesController::class,'editCategory'])->name('editCategory');
 Route::post('/update-category/{id}',[CategoriesController::class,'updateCategory'])->name('updateCategory');
+
+
+
+//Category Event
+Route::get('/event-all',[EventController::class,'allEvent'])->name('allEvent');
+Route::get('/event-form',[EventController::class,'addeventForm'])->name('addEventForm');
+
+Route::post('/add-event',[EventController::class,'storeEvent'])->name('storeEvent');
+Route::get('/delete-event/{id}',[EventController::class,'deleteEvent'])->name('eventDelete');
+Route::get('/edit-event/{id}',[EventController::class,'eventEdit'])->name('eventEdit');
+Route::post('/update-event/{id}',[EventController::class,'eventUpdate'])->name('eventUpdate');

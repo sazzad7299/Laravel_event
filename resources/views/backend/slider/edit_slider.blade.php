@@ -30,6 +30,7 @@
                                     <input type="text" class="form-control" name="title" value="{{ $bannerDetails->title }}"  required="true">
                                 </div>
                             </div>
+                            
                             <div class="form-group row">
                                 <label for="fname" class="col-sm-3 text-right control-label col-form-label">Banner Text(p)</label>
                                 <div class="col-sm-9">

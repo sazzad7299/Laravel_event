@@ -66,7 +66,7 @@ Route::post('/update-category/{id}',[CategoriesController::class,'updateCategory
 
 
 
-//Category Event
+//Event Routing
 Route::get('/event-all',[EventController::class,'allEvent'])->name('allEvent');
 Route::get('/event-form',[EventController::class,'addeventForm'])->name('addEventForm');
 

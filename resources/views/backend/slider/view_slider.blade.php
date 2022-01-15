@@ -53,6 +53,7 @@
                               <th>Title</th>
                               <th>Position</th>
                               <th>Image</th>
+                              <th>Status</th>
                               <th>Actions</th>
                             </tr>
                         </tfoot>

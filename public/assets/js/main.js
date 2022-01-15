@@ -80,3 +80,6 @@
   });      
 
 }(jQuery));
+function comEVT(){
+  alert("hello");
+}

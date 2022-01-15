@@ -50,19 +50,30 @@
                 Sponsors
               </a>
             </li>
+            @guest
+            <li class="nav-item">
+              <a class="nav-link" href="{{ route('login') }}">
+                Log in
+              </a>
+            </li> 
+            @endguest
+            @auth
             <li class="nav-item">
               <a class="nav-link">
                 <li class="nav-item dropdown">
                   <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                      {{ Auth::user()->name }}
+                     {{ Auth::user()->name }}
                   </a>
 
                   <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+
                     <a class="dropdown-item" href="/home">Dashboard5</a>
+
+
                          
                     <a class="dropdown-item" href="{{ route('logout') }}"
                         onclick="event.preventDefault();
-                                      document.getElementById('logout-form').submit();">
+                                      document.getElementById('logout-form').submit()">
                         {{ __('Logout') }}
                     </a>
 
@@ -73,6 +84,7 @@
               </li>
               </a>
             </li>
+            @endauth
             
           </ul>
         </div>

@@ -3,8 +3,12 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\backend\adminController;
 use App\Http\Controllers\backend\CategoriesController;
+<<<<<<< HEAD
+use App\Http\Controllers\frontend\CategoriesShowController;
+=======
 use App\Http\Controllers\backend\EventController;
 
+>>>>>>> 21cf22150ef461aa0c7e983ecfa61a340104b6a2
 
 
 /*
@@ -18,12 +22,12 @@ use App\Http\Controllers\backend\EventController;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-Route::get('/',[App\Http\Controllers\IndexController::class, 'index'])->name('index');
+// Route::get('/',[App\Http\Controllers\IndexController::class, 'index'])->name('index');
 
-
+Route::get('/',[App\Http\Controllers\indexController::class, 'index'])->name('index');
+Route::get('/about-us',[App\Http\Controllers\indexController::class, 'about'])->name('about');
+Route::get('/gallery',[App\Http\Controllers\indexController::class, 'gallery'])->name('gallery');
+Route::get('/schedules',[App\Http\Controllers\indexController::class, 'schedules'])->name('schedules');
 
 //admin controlling
 // Banner Controlling
@@ -34,9 +38,7 @@ Route::match(['get','post'],'delete-slider/{id}',[App\Http\Controllers\SliderCon
 
 
 
-Route::get('/',[App\Http\Controllers\indexController::class, 'index'])->name('index');
-
-
+Route::get('/categories',[CategoriesShowController::class,'all_category'])->name('show_cat_all');
 
 
 //backend start
@@ -66,7 +68,7 @@ Route::post('/update-category/{id}',[CategoriesController::class,'updateCategory
 
 
 
-//Category Event
+//Event Routing
 Route::get('/event-all',[EventController::class,'allEvent'])->name('allEvent');
 Route::get('/event-form',[EventController::class,'addeventForm'])->name('addEventForm');
 

@@ -1,5 +1,4 @@
  <!-- Bootstrap core JavaScript-->
- <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
  <script src="{{asset('backend/vendor/jquery/jquery.min.js')}}"></script>
  <script src="{{asset('backend/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 

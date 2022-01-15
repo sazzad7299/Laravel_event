@@ -32,13 +32,14 @@
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseBrand"
             aria-expanded="true" aria-controls="collapseBrand">
             <i class="fas fa-fw fa-wrench"></i>
-            <span>Brand</span>
+            <span>Slider</span>
         </a>
         <div id="collapseBrand" class="collapse" aria-labelledby="headingUtilities"
             data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <h6 class="collapse-header">Manage Brand:</h6>
-                <a class="collapse-item" href="">All Brand</a>
+                <h6 class="collapse-header">Manage Slider:</h6>
+                <a class="collapse-item" href="{{ route('viewslider') }}">All Slider</a>
+                <a class="collapse-item" href="{{ route('addslider') }}">Add Slider</a>
                 
             </div>
         </div>

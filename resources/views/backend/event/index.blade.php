@@ -13,8 +13,13 @@
               <tr class="text-center" style="background:rgb(35, 35, 245)">
                 <th scope="col" class="text-white">Title</th>
                 <th scope="col" class="text-white">Venue</th>
+                <th scope="col" class="text-white">Start Date</th>
+
                 <th scope="col" class="text-white">End Date</th>
                 <th scope="col" class="text-white">Category</th>
+                <th scope="col" class="text-white">Seat</th>
+
+
 
                 <th scope="col" class="text-white">Status</th>
                 <th scope="col" class="text-white">Photo</th>
@@ -32,10 +37,16 @@
                     <td>{{$event->title}}</td>
                     <td>{{$event->venue}}</td>
                     <td>
+                      {{$event->start_date}}
+                    </td>
+                    <td>
                       {{$event->end_date}}
                     </td>
                     <td>
                       {{$event->end_date}}
+                    </td>
+                    <td>
+                      {{$event->seat}}
                     </td>
 
 

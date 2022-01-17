@@ -20,7 +20,6 @@ class CreateEventsTable extends Migration
             $table->string('venue');
             $table->string('image');
             $table->integer('category_id');
-
             $table->enum('status',['active','inactive'])->default('inactive');
             $table->date('end_date');
             $table->timestamps();

@@ -1,4 +1,4 @@
-@extends('layouts.front_master');
+@extends('layouts.front_master')
 @section('content')
 <div class="dashboard " style="background:black;padding-top:70px">
 </div>

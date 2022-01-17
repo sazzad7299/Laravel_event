@@ -4,7 +4,16 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\backend\adminController;
 use App\Http\Controllers\backend\CategoriesController;
 use App\Http\Controllers\frontend\CategoriesShowController;
+<<<<<<< HEAD
 use App\Http\Controllers\backend\EventController;
+=======
+use App\Http\Controllers\backend\EventController;
+use App\Http\Controllers\frontend\CategoriesShowController;
+use App\Http\Controllers\backend\EventController;
+
+
+
+>>>>>>> 89e423f48e5640e156d6b7dbf7f9400bd014d525
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -41,10 +50,10 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/dashboard',[adminController::class, 'index'])->name('admin.home');
-Route::get('/admin/login',[adminController::class, 'loginForm'])->name('admin.login');
-Route::post('/login-save',[adminController::class, 'submit_login'])->name('admin.loginSave');
-Route::get('/login/logout',[adminController::class, 'logout'])->name('admin.logout');
+Route::get('/dashboard',[AdminController::class, 'index'])->name('admin.home');
+Route::get('/admin/login',[AdminController::class, 'loginForm'])->name('admin.login');
+Route::post('/login-save',[AdminController::class, 'submit_login'])->name('admin.loginSave');
+Route::get('/login/logout',[AdminController::class, 'logout'])->name('admin.logout');
 
 
 
@@ -70,3 +79,4 @@ Route::post('/add-event',[EventController::class,'storeEvent'])->name('storeEven
 Route::get('/delete-event/{id}',[EventController::class,'deleteEvent'])->name('eventDelete');
 Route::get('/edit-event/{id}',[EventController::class,'eventEdit'])->name('eventEdit');
 Route::post('/update-event/{id}',[EventController::class,'eventUpdate'])->name('eventUpdate');
+

@@ -32,6 +32,9 @@ class EventController extends Controller
         $request->validate([
             'title'=>'required|unique:events,title',
             'image'=>'required',
+            'start_date'=>'required|after_or_equal:today',
+            'end_date'=>'required|after:start_date',
+
 
         ]);
        

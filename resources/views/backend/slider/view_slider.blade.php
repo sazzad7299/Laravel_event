@@ -8,17 +8,27 @@
     <div class="container-fluid">
         <div class="card">
             <div class="card-body">
-                <h5 class="card-title">All Produts</h5>
+              <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                <h1 class="h3 mb-0 text-gray-800">AlL Sliders</h1>
+                <a href="{{route('viewslider')}}"  class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" ><i
+                        class="fas fa-plus fa-sm text-white-50"></i> Add Event</a>
+                          
+    
+            </div>
                 <div class="table-responsive">
                     <table id="zero_config" class="table table-striped table-bordered">
                       <thead>
-                        <tr>
-                          <th>Banner ID</th>
-                          <th>Title</th>
-                          <th>Position</th>
-                          <th>Image</th>
-                          <th>Status</th>
-                          <th>Actions</th>
+                        <tr class="text-center" style="background:rgb(35, 35, 245)">
+                          <th scope="col" class="text-white">Title</th>
+                          <th scope="col" class="text-white">Banner ID</th>
+                          <th scope="col" class="text-white">Title</th>
+                          <th scope="col" class="text-white">Position</th>
+          
+                          <th scope="col" class="text-white">Image</th>
+                          <th scope="col" class="text-white">Status</th>
+          
+                          <th class="text-white" scope="col">Action</th>
+          
                         </tr>
                       </thead>
                       <tbody>
@@ -47,16 +57,7 @@
                         </tr>
                         @endforeach
                       </tbody>
-                        <tfoot>
-                            <tr>
-                              <th>Banner ID</th>
-                              <th>Title</th>
-                              <th>Position</th>
-                              <th>Image</th>
-                              <th>Status</th>
-                              <th>Actions</th>
-                            </tr>
-                        </tfoot>
+    
                     </table>
                 </div>
 

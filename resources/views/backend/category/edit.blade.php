@@ -18,7 +18,7 @@
 
             <div class="form-group">
               <label for="exampleInputPassword1">Description</label>
-              <textarea name="summary" id="summary" rows="10" cols="80" class="form-control">{{$category->summary}}</textarea>
+              <textarea name="summary" id="summary" rows="10" cols="80" class="form-control">{{$category->summary }}</textarea>
             </div>
             
 

@@ -28,15 +28,22 @@
 
             </div>
             <div class="form-group">
+              <label for="exampleInputPassword1">Event Start Date</label>
+              <input type="date" class="form-control " name="start_date" id="name" aria-describedby="emailHelp" value="{{old('start_date')}}" placeholder="End Date Of Event">
+              @error('start_date')
+              <span class="text-danger">{{$message}}</span>
+              @enderror
+              
+            </div>
+            <div class="form-group">
               <label for="exampleInputPassword1">Event End Date</label>
               <input type="date" class="form-control " name="end_date" id="name" aria-describedby="emailHelp" value="{{old('end_date')}}" placeholder="End Date Of Event">
 
+              @error('end_date')
+              <span class="text-danger">{{$message}}</span>
+              @enderror
             </div>
-            <div class="form-group">
-              <label for="exampleInputPassword1">Event Start Date</label>
-              <input type="date" class="form-control " name="start_date" id="name" aria-describedby="emailHelp" value="{{old('start_date')}}" placeholder="End Date Of Event">
-
-            </div>
+            
             <div class="form-group">
               <label for="exampleInputPassword1">Parent Category (optional)</label>
               <select class="form-control" name="category_id">

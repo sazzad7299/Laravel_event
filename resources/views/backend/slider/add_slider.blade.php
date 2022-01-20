@@ -4,6 +4,12 @@
 @section('main_content')
  <!-- Begin Page Content -->
  <div class="container-fluid">
+    <div class="container-fluid">
+        <div class="d-sm-flex align-items-center justify-content-between mb-4">
+          <h1 class="h3 mb-0 text-gray-800">All Sliders</h1>
+          <a href="{{route('allEvent')}}"  class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" ><i
+                  class=" text-white-50"></i>All Sliders</a>                  
+      </div>
 
     <div class="container-fluid">
         <form enctype="multipart/form-data" class="form-horizontal" action="{{ route('addslider') }}" method="post" name="add_banner" id="add-banner"> {{csrf_field()}}

@@ -19,7 +19,7 @@
 
             <div class="form-group">
               <label for="exampleInputPassword1">Description</label>
-              <textarea id="summary" rows="8" cols="80" class="form-control"></textarea>
+              <textarea id="summary" name="summary" rows="8" cols="80" class="form-control"></textarea>
 
             </div>
             

@@ -22,7 +22,7 @@
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{{route('show_cat_all')}}">
-                Categories
+                Events
               </a>
             </li>
             <li class="nav-item">
@@ -53,22 +53,18 @@
             <li class="nav-item">
               <a class="nav-link">
                 <li class="nav-item dropdown">
-                  <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                     {{ Auth::user()->name }}
+                  <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre style="border-radius: 50%;background: #ccc; color:black">
+                    <em class="lni lni-user"></em>
                   </a>
 
                   <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
 
                     <a class="dropdown-item" href="/home">Dashboard5</a>
-
-
-                         
                     <a class="dropdown-item" href="{{ route('logout') }}"
                         onclick="event.preventDefault();
                                       document.getElementById('logout-form').submit()">
                         {{ __('Logout') }}
                     </a>
-
                       <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                           @csrf
                       </form>
@@ -86,32 +82,36 @@
       <!-- Mobile Menu Start -->
       <ul class="mobile-menu">
         <li>
-          <a class="page-scrool" href="#header-wrap">Home</a>
+          <a class="page-scrool" href="{{route('index')}}">Home</a>
         </li>
         <li>
-          <a class="page-scrool" href="#about">About</a>
+          <a class="page-scrool" href="{{route('about')}}">About</a>
         </li>
         <li>
-           <a class="page-scroll" href="#schedules">schedules</a>
+           <a class="page-scroll" href="{{route('schedules')}}">Schedules</a>
         </li>
+
         <li>
-          <a class="page-scroll" href="#team">Speakers</a>
+          <a class="page-scroll" href="{{route('gallery')}}">Gallery</a>
         </li>
+
         <li>
-          <a class="page-scroll" href="#gallery">Gallery</a>
+          <a class="page-scroll" href="{{route('show_cat_all')}}">Events</a>
         </li>
+        @guest
         <li>
-          <a class="page-scroll" href="#faq">Faq</a>
-        </li>
+          <a class="page-scroll" href="{{ route('login') }}">
+            Log in
+          </a>
+        </li> 
+        @endguest
+        @auth
         <li>
-          <a class="page-scroll" href="#sponsors">Sponsors</a>
+          <a class="page-scroll" href="{{ route('home') }}">
+            Dashboard
+          </a>
         </li>
-        <li>
-          <a class="page-scroll" href="#pricing">Pricing</a>
-        </li>
-        <li>
-          <a class="page-scroll" href="#google-map-area">Contact</a>
-        </li>
+        @endauth
       </ul>
       <!-- Mobile Menu End -->
 

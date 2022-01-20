@@ -4,26 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\backend\adminController;
 use App\Http\Controllers\backend\CategoriesController;
 use App\Http\Controllers\frontend\CategoriesShowController;
-<<<<<<< HEAD
 use App\Http\Controllers\backend\EventController;
-=======
-use App\Http\Controllers\backend\EventController;
-use App\Http\Controllers\frontend\CategoriesShowController;
-use App\Http\Controllers\backend\EventController;
-
-
-
->>>>>>> 89e423f48e5640e156d6b7dbf7f9400bd014d525
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
 
 // Route::get('/',[App\Http\Controllers\IndexController::class, 'index'])->name('index');
 
@@ -42,6 +23,8 @@ Route::match(['get','post'],'delete-slider/{id}',[App\Http\Controllers\SliderCon
 
 
 Route::get('/categories',[CategoriesShowController::class,'all_category'])->name('show_cat_all');
+Route::get('/single/category/{id}',[CategoriesShowController::class,'single_cat_page'])->name('single_cat_page');
+
 
 
 //backend start

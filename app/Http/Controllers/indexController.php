@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Slider;
 use Illuminate\Http\Request;
+use App\Models\Event;
 
 class IndexController extends Controller
 {
@@ -22,7 +23,8 @@ class IndexController extends Controller
     }
 
     public function schedules(){
-        return view('schedules');
+        $events=Event::latest(4);
+        return view('schedules',['events'=>$events]);
     }
     
 }

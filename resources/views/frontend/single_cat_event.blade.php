@@ -5,15 +5,15 @@
 <div class="container">
     <div class="row " >
         <div class="col-md-12">
-            <h5 class="text-center pb-5">All Categories</h5>
+            <h5 class="text-center pb-5">Single Categories Event</h5>
             <div class="row mb-5"> 
-                @if(count($categories)>0)
-                    @foreach($categories as $category)
+                @if(count($events)>0)
+                    @foreach($events as $event)
                     <div class="col-md-3">
                         <div class="card">
-                          <a href="{{route('single_cat_page',['id'=>$category->id])}}"><img src="{{asset('images/category/'.$category->photo)}}" class="card-img-top" alt="{{$category->title}}" height="250px" /></a>
+                          <a href="{{route('single_cat_page',['id'=>$event->id])}}"><img src="{{asset('images/event/'.$event->image)}}" class="card-img-top" alt="{{$event->title}}" height="250px" /></a>
                           <div class="card-body">
-                            <h5 class="card-title"><a href="">{{$category->title}}</a></h5>
+                            <h5 class="card-title"><a href="">{{$event->title}}</a></h5>
                           </div>
                         </div>
                     </div>
@@ -23,7 +23,7 @@
                 @endif
             </div>
             <!-- Pagination -->
-            {{$categories->links()}}
+            {{$events->links()}}
         </div>
         <!-- Right SIdebar -->
         

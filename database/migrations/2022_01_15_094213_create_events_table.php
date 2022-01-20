@@ -19,6 +19,7 @@ class CreateEventsTable extends Migration
             $table->text('detail');
             $table->string('venue');
             $table->string('image');
+            $table->double('price');
             $table->integer('category_id');
             $table->enum('status',['active','inactive'])->default('inactive');
             $table->date('end_date');

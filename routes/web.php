@@ -1,12 +1,12 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\backend\adminController;
+use App\Http\Controllers\backend\EventController;
 use App\Http\Controllers\backend\CategoriesController;
 use App\Http\Controllers\frontend\CategoriesShowController;
-use App\Http\Controllers\backend\EventController;
-use App\Http\Controllers\frontend\CategoriesShowController;
-use App\Http\Controllers\backend\EventController;
+
 
 
 
@@ -27,6 +27,7 @@ Route::get('/',[App\Http\Controllers\indexController::class, 'index'])->name('in
 Route::get('/about-us',[App\Http\Controllers\indexController::class, 'about'])->name('about');
 Route::get('/gallery',[App\Http\Controllers\indexController::class, 'gallery'])->name('gallery');
 Route::get('/schedules',[App\Http\Controllers\indexController::class, 'schedules'])->name('schedules');
+Route::get('/event/{id}',[EventController::class,'viewEvent'])->name('viewEvent');
 
 //admin controlling
 // Banner Controlling
@@ -75,4 +76,6 @@ Route::post('/add-event',[EventController::class,'storeEvent'])->name('storeEven
 Route::get('/delete-event/{id}',[EventController::class,'deleteEvent'])->name('eventDelete');
 Route::get('/edit-event/{id}',[EventController::class,'eventEdit'])->name('eventEdit');
 Route::post('/update-event/{id}',[EventController::class,'eventUpdate'])->name('eventUpdate');
+
+//Event Booking
 

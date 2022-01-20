@@ -2217,3 +2217,35 @@ a.back-to-top:hover, a.back-to-top:focus {
   color: #fff;
   border-color: #fff;
 }
+#singleDetails{
+  padding: 50px 0px;
+}
+#singleDetails img{
+  width: 100%;
+  border: 5px solid orange;
+  border-radius: 10px;
+  box-shadow: 3px 4px 3px #ccc;
+}
+#singleDetails .details{
+  margin-top:50px;
+}
+#singleDetails .shortDetails{
+  width:80%;
+  margin:0 auto;
+  justify-content: center;
+  color: rgb(7, 15, 88);
+}
+#singleDetails .shortDetails p span{
+  font-size: 60px;
+  color: orange;
+  font-weight: 700;
+}
+#singleDetails .cover{
+  width:80%;
+  margin:0 auto;
+  justify-content: center;
+  text-align: center;
+  padding: 10px 0px;
+  color: wheat;
+  background-color: #00aced;
+}

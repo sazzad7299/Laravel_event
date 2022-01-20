@@ -111,7 +111,25 @@ class EventController extends Controller
         $event->save();
         return redirect()->route('allEvent')->with('success','Event update successfully');;
     }
+    public function viewEvent($id=null)
+    {
+        $eventCount = Event::where(['id'=>$id, 'status'=>1])->count();
+        if($eventCount==0){
+            abort(404);
+        }
 
+        $eventDetails = Event::where(['id'=>$id])->count();
+        $eventDetails=json_decode(json_encode($eventDetails));
+        
+
+        
+        if($eventDetails==0){
+            abort(404);
+        }
+        $eventDetails =  Event::where(['id'=>$id])->first();
+        // echo "<pre>"; print_r($eventDetails);die;
+        return view('singleevent')->with(compact('eventDetails'));
+    }
     public function deleteEvent($id)
     {
         $event = Event::find($id)->delete();

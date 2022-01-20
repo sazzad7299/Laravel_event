@@ -34,6 +34,10 @@ class EventController extends Controller
             'image'=>'required',
             'price'=>'required',
 
+            'start_date'=>'required|after_or_equal:today',
+            'end_date'=>'required|after:start_date',
+
+
         ]);
        
         $event = new Event();

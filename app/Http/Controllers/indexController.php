@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Event;
 use App\Models\Slider;
 use Illuminate\Http\Request;
 use App\Models\Event;
@@ -11,7 +12,8 @@ class IndexController extends Controller
     public function index(){
         $sliders = Slider::where('status','1')->get();
         $sliderCount = Slider::where('status','1')->count();
-        return view('index')->with(compact('sliders','sliderCount'));
+        $event = Event::where('status','active')->get();
+        return view('index')->with(compact('sliders','sliderCount','event'));
     }
 
     public function about(){

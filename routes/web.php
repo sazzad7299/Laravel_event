@@ -1,10 +1,28 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\backend\adminController;
+
 use App\Http\Controllers\backend\CategoriesController;
 use App\Http\Controllers\frontend\CategoriesShowController;
+<<<<<<< HEAD
 use App\Http\Controllers\backend\EventController;
+=======
+
+use App\Http\Controllers\backend\EventController;
+
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider within a group which
+| contains the "web" middleware group. Now create something great!
+|
+*/
+>>>>>>> e5da470caf8da9c4437f9ec5881f2cbf43e057c1
 
 // Route::get('/',[App\Http\Controllers\IndexController::class, 'index'])->name('index');
 
@@ -12,6 +30,7 @@ Route::get('/',[App\Http\Controllers\indexController::class, 'index'])->name('in
 Route::get('/about-us',[App\Http\Controllers\indexController::class, 'about'])->name('about');
 Route::get('/gallery',[App\Http\Controllers\indexController::class, 'gallery'])->name('gallery');
 Route::get('/schedules',[App\Http\Controllers\indexController::class, 'schedules'])->name('schedules');
+Route::get('/event/{id}',[EventController::class,'viewEvent'])->name('viewEvent');
 
 //admin controlling
 // Banner Controlling
@@ -62,4 +81,6 @@ Route::post('/add-event',[EventController::class,'storeEvent'])->name('storeEven
 Route::get('/delete-event/{id}',[EventController::class,'deleteEvent'])->name('eventDelete');
 Route::get('/edit-event/{id}',[EventController::class,'eventEdit'])->name('eventEdit');
 Route::post('/update-event/{id}',[EventController::class,'eventUpdate'])->name('eventUpdate');
+
+//Event Booking
 

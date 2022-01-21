@@ -32,6 +32,8 @@ class EventController extends Controller
         $request->validate([
             'title'=>'required|unique:events,title',
             'image'=>'required',
+            'price'=>'required',
+
             'start_date'=>'required|after_or_equal:today',
             'end_date'=>'required|after:start_date',
 
@@ -62,6 +64,7 @@ class EventController extends Controller
         $event->image = $name;
         $event->status = $request->status;
         $event->category_id = $request->category_id;
+        $event->price =$request->price;
         $event->save();
         return back()->with('success','Event added successfully');
 
@@ -88,6 +91,7 @@ class EventController extends Controller
         $event->end_date = $request->end_date;
         $event->start_date = $request->start_date;
         $event->seat = $request->seat;
+        $event->price = $request->price;
 
         $event->status = $request->status;
         $event->category_id = $request->category_id;

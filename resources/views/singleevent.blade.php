@@ -11,7 +11,7 @@
         </div>
         <div class="col-md-5">
             <div class="shortDetails">
-                <p><span>500৳</span> Per Person</p>
+                <p><span>{{ $eventDetails->price }}৳</span> Per Person</p>
                 <hr>
                 @if($eventDetails->seat ==0)
                 <p><em class="lni-cross-circle">Seat Not Available</em></p>

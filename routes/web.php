@@ -37,6 +37,8 @@ Route::match(['get','post'],'delete-slider/{id}',[App\Http\Controllers\SliderCon
 
 
 
+
+
 Route::get('/categories',[CategoriesShowController::class,'all_category'])->name('show_cat_all');
 
 
@@ -77,4 +79,10 @@ Route::get('/edit-event/{id}',[EventController::class,'eventEdit'])->name('event
 Route::post('/update-event/{id}',[EventController::class,'eventUpdate'])->name('eventUpdate');
 
 //Event Booking
+Route::match(['get','post'],'/cart/{id}',[EventController::class,'cart'])->name('cart');
+Route::match(['get','post'],'cart',[EventController::class,'viewCart'])->name('viewCart');
+Route::match(['get','post'],'cart/increment/{rowId}',[EventController::class,'incrementQty'])->name('incrementQty');
+Route::match(['get','post'],'cart/decrement/{rowId}',[EventController::class,'minusQty'])->name('minusQty');
+Route::match(['get','post'],'cart/delete/{rowId}',[EventController::class,'deleteCart'])->name('deleteCart');
+Route::match(['get','post'],'checkout',[EventController::class,'checkout'])->name('checkout');
 

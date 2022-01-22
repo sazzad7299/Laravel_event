@@ -2,14 +2,16 @@
 
 namespace App\Http\Controllers\backend;
 
-use App\Http\Controllers\Controller;
+use File;
+
+use App\Models\Event;
+use App\Models\Category;
 use Illuminate\Support\Str;
 
 use Illuminate\Http\Request;
-use App\Models\Category;
-use App\Models\Event;
-
-use File;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
+use Gloudemans\Shoppingcart\Facades\Cart;
 
 class EventController extends Controller
 {
@@ -142,6 +144,49 @@ class EventController extends Controller
         $event = Event::find($id)->delete();
         return back()->with('error','Event delete successfully');
 
+    }
+    public function cart($id)
+    {
+        $event = Event::where(['id'=>$id])->first();
+        
+        Cart::add($id, $event->title, 1, $event->price,[],0)->associate('App\Models\Event');
+        return redirect()->route('viewCart');
+    }
+    public function viewCart()
+    {
+        Cart::content();
+         return view('cart');
+
+    }
+    public function incrementQty($rowId)
+    {
+        $event = Cart::get($rowId);
+        $qty =$event->qty+1;
+        Cart::update($rowId,$qty);
+        return redirect()->route('viewCart');
+    }
+    public function minusQty($rowId)
+    {
+        $event = Cart::get($rowId);
+        $qty =$event->qty-1;
+        Cart::update($rowId,$qty);
+        return redirect()->route('viewCart');
+    }
+    public function deleteCart($rowId)
+    {
+        Cart::remove($rowId);
+        return redirect()->route('viewCart');
+    }
+    public function checkout()
+    {
+        if(Auth::check()){
+            $carts =Cart::content();
+        return $carts;
+        }
+        else {
+            return redirect()->route('login');
+        }
+        
     }
 
 }

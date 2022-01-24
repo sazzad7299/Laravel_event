@@ -10,12 +10,6 @@ use App\Http\Controllers\backend\EventController;
 use App\Http\Controllers\backend\CategoriesController;
 use App\Http\Controllers\frontend\CategoriesShowController;
 
-
-
-
-
-
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes

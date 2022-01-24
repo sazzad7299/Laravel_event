@@ -136,7 +136,6 @@
                   <p>{!! Str::limit($item->detail, 200)  !!}</p> <br>
                   @if($item->seat ==0)
                   <button type="button" class="btn btn-common btn-rm" disabled>Not Available</button>
-                  <a class="btn btn-common btn-rm" href="{{ url('event/'.$item->id) }}">View Details</a>
                   @else
                   <a class="btn btn-common btn-rm" href="">Book Now</a>
                   <a class="btn btn-common btn-rm" href="{{ url('cart/'.$item->id) }}">Book Now</a>

@@ -20,8 +20,6 @@ use App\Http\Controllers\frontend\CategoriesShowController;
 |
 */
 
-// Route::get('/',[App\Http\Controllers\IndexController::class, 'index'])->name('index');
-
 Route::get('/',[App\Http\Controllers\indexController::class, 'index'])->name('index');
 Route::get('/about-us',[App\Http\Controllers\indexController::class, 'about'])->name('about');
 Route::get('/gallery',[App\Http\Controllers\indexController::class, 'gallery'])->name('gallery');
@@ -34,9 +32,6 @@ Route::match(['get','post'],'add+&&+slider',[App\Http\Controllers\SliderControll
 Route::match(['get','post'],'edit-slider/{id}',[App\Http\Controllers\SliderController::class, 'editSlider'])->name('editslider');
 Route::get('/view-slider',[App\Http\Controllers\SliderController::class, 'viewSlider'])->name('viewslider');
 Route::match(['get','post'],'delete-slider/{id}',[App\Http\Controllers\SliderController::class, 'deleteSlider'])->name('deleteSlider');
-
-
-
 
 
 Route::get('/categories',[CategoriesShowController::class,'all_category'])->name('show_cat_all');

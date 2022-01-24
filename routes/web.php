@@ -20,8 +20,6 @@ use App\Http\Controllers\frontend\CategoriesShowController;
 |
 */
 
-// Route::get('/',[App\Http\Controllers\IndexController::class, 'index'])->name('index');
-
 Route::get('/',[App\Http\Controllers\indexController::class, 'index'])->name('index');
 Route::get('/about-us',[App\Http\Controllers\indexController::class, 'about'])->name('about');
 Route::get('/gallery',[App\Http\Controllers\indexController::class, 'gallery'])->name('gallery');

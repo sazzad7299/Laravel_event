@@ -10,6 +10,11 @@ use App\Http\Controllers\backend\EventController;
 use App\Http\Controllers\backend\CategoriesController;
 use App\Http\Controllers\frontend\CategoriesShowController;
 
+
+
+
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -50,10 +55,14 @@ Auth::routes();
 // User Controlling
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
 Route::match(['get', 'post'], '/home/profile',[UserController::class,'updateProfile'])->name('updateProfile');
 
 
-Route::get('/dashboard',[AdminController::class, 'index'])->name('admin.home');
+Route::group(['middleware'=>['auth','admin']],function(){
+    Route::get('/dashboard',[AdminController::class, 'index'])->name('admin.home');
+
+});
 Route::get('/admin/login',[AdminController::class, 'loginForm'])->name('admin.login');
 Route::post('/login-save',[AdminController::class, 'submit_login'])->name('admin.loginSave');
 Route::get('/login/logout',[AdminController::class, 'logout'])->name('admin.logout');

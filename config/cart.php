@@ -4,7 +4,6 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-<<<<<<< HEAD
     | Gross price as base price
     |--------------------------------------------------------------------------
     |
@@ -15,23 +14,7 @@ return [
 
     'calculator' => \Gloudemans\Shoppingcart\Calculation\DefaultCalculator::class,
 
-    /*
-    |--------------------------------------------------------------------------
-=======
->>>>>>> 76b1d5f56409c0b0ba153904fadbb1da0f5ab1bb
-    | Default tax rate
-    |--------------------------------------------------------------------------
-    |
-    | This default tax rate will be used when you make a class implement the
-    | Taxable interface and use the HasTax trait.
-    |
-    */
-
-<<<<<<< HEAD
     'tax' => 21,
-=======
-    'tax' => 0,
->>>>>>> 76b1d5f56409c0b0ba153904fadbb1da0f5ab1bb
 
     /*
     |--------------------------------------------------------------------------
@@ -63,19 +46,6 @@ return [
 
     'destroy_on_logout' => false,
 
-    /*
-    |--------------------------------------------------------------------------
-    | Default number format
-    |--------------------------------------------------------------------------
-    |
-<<<<<<< HEAD
-    | This defaults will be used for the formatted numbers if you don't
-=======
-    | This defaults will be used for the formated numbers if you don't
->>>>>>> 76b1d5f56409c0b0ba153904fadbb1da0f5ab1bb
-    | set them in the method call.
-    |
-    */
 
     'format' => [
 
@@ -83,16 +53,9 @@ return [
 
         'decimal_point' => '.',
 
-<<<<<<< HEAD
-        'thousand_separator' => ',',
 
-    ],
-
-];
-=======
         'thousand_seperator' => ','
 
     ],
 
 ];
->>>>>>> 76b1d5f56409c0b0ba153904fadbb1da0f5ab1bb

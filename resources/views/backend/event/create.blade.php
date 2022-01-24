@@ -58,12 +58,20 @@
 
             </div>
             <div class="form-group">
+              <label for="exampleInputPassword1">Ticket Price <span style="color: #ccc">Per Person</span></label>
+              <input type="number" class="form-control " name="price" aria-describedby="emailHelp" value="{{old('seat')}}" >
+              @error('price')
+              <span class="text-danger">{{$message}}</span>
+              @enderror
+            </div>
+            <div class="form-group">
               <label for="exampleInputPassword1">Seat</label>
               <input type="number" class="form-control " name="seat" aria-describedby="emailHelp" value="{{old('seat')}}" >
               @error('seat')
               <span class="text-danger">{{$message}}</span>
               @enderror
             </div>
+            
             <div class="form-group">
                 <label for="status" class="col-form-label">Status <span class="text-danger">*</span></label>
                 <select name="status" class="form-control">

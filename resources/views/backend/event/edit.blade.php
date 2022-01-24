@@ -29,7 +29,7 @@
             </div>
             <div class="form-group">
               <label for="exampleInputPassword1">Event Start Date</label>
-              <input type="date" class="form-control " name="start_date" id="name" aria-describedby="emailHelp" value="{{old('start_date')}}" placeholder="End Date Of Event">
+              <input type="date" class="form-control " name="start_date" id="name" aria-describedby="emailHelp" value="{{$event->start_date}}" placeholder="End Date Of Event">
 
             </div>
             <div class="form-group">
@@ -39,8 +39,15 @@
             </div>
             <div class="form-group">
               <label for="exampleInputPassword1">Seat</label>
-              <input type="number" class="form-control " name="seat" aria-describedby="emailHelp" value="{{old('seat')}}" >
-              @error('seat')
+              <input type="number" class="form-control " name="seat" aria-describedby="emailHelp" value="{{$event->seat}}" >
+              @error('price')
+              <span class="text-danger">{{$message}}</span>
+              @enderror
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Price</label>
+              <input type="number" class="form-control " name="price" aria-describedby="emailHelp" value="{{$event->price}}" >
+              @error('price')
               <span class="text-danger">{{$message}}</span>
               @enderror
             </div>
@@ -63,20 +70,7 @@
                     {{ $parent->title }}</option>
                 @endforeach
               </select>
-
             </div>
-            <div class="form-group">
-                <label for="status" class="col-form-label">Status <span class="text-danger">*</span></label>
-                <select name="status" class="form-control">
-                  <option value="active">{{$event->status}}</option>
-
-                    <option value="active">Active</option>
-                    <option value="inactive">Inactive</option>
-                </select>
-                @error('status')
-                <span class="text-danger">{{$message}}</span>
-                @enderror
-              </div>
 
               <div>
                 <img height="150" width="150" src="{{asset('images/event/'.$event->image)}}" alt="">

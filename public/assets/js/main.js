@@ -10,7 +10,7 @@
 
   // Sticky Nav
     $(window).on('scroll', function() {
-        if ($(window).scrollTop() > 200) {
+        if ($(window).scrollTop() > 50) {
             $('.scrolling-navbar').addClass('top-nav-collapse');
         } else {
             $('.scrolling-navbar').removeClass('top-nav-collapse');
@@ -80,4 +80,69 @@
   });      
 
 }(jQuery));
+update_amounts();
+$('select').change(update_amounts);
+
+function update_amounts() {
+    var sum = 0.0;
+    $('#tickets > tbody  > tr').each(function() {
+        var qty = $(this).find('option:selected').val();
+        var price = $(this).find('.price').text().replace(/[^\d.]/, '');
+        var amount = (qty * price);
+        sum += amount;
+        $(this).find('.subtotal').text(amount + ' tk');
+    });
+    $('#total').val(sum);
+    $('#tickets > tbody  > tr').change(function() {
+        var tot = $('#total').val();
+        $('#cost').val(tot);
+    });
+    $('#adults').change(function() {
+
+        var qan = $('#adults').val();
+        $('#quantity').val(qan);
+    });
+    $('#children').change(function() {
+
+        var qan = $('#children').val();
+        $('#chQuantity').val(qan);
+    });
+    $('#infant').change(function() {
+        var qan = $('#infant').val();
+        $('#inQuantity').val(qan);
+    });
+}
+
+
+  var quantitiy=0;
+     $('.quantity-right-plus').click(function(e){
+          
+          // Stop acting like a button
+          e.preventDefault();
+          // Get the field name
+          var quantity = parseInt($('#quantity').val());
+          
+          // If is not undefined
+              
+              $('#quantity').val(quantity + 1);
+  
+            
+              // Increment
+          
+      });
+  
+       $('.quantity-left-minus').click(function(e){
+          // Stop acting like a button
+          e.preventDefault();
+          // Get the field name
+          var quantity = parseInt($('#quantity').val());
+          
+          // If is not undefined
+        
+              // Increment
+              if(quantity>0){
+              $('#quantity').val(quantity - 1);
+              }
+      });
+      
 

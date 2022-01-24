@@ -1,10 +1,14 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\backend\adminController;
+
 use App\Http\Controllers\backend\CategoriesController;
+
 use App\Http\Controllers\backend\EventController;
 use App\Http\Controllers\frontend\CategoriesShowController;
+
 
 
 
@@ -26,6 +30,7 @@ Route::get('/',[App\Http\Controllers\indexController::class, 'index'])->name('in
 Route::get('/about-us',[App\Http\Controllers\indexController::class, 'about'])->name('about');
 Route::get('/gallery',[App\Http\Controllers\indexController::class, 'gallery'])->name('gallery');
 Route::get('/schedules',[App\Http\Controllers\indexController::class, 'schedules'])->name('schedules');
+Route::get('/event/{id}',[EventController::class,'viewEvent'])->name('viewEvent');
 
 //admin controlling
 // Banner Controlling
@@ -33,6 +38,8 @@ Route::match(['get','post'],'add+&&+slider',[App\Http\Controllers\SliderControll
 Route::match(['get','post'],'edit-slider/{id}',[App\Http\Controllers\SliderController::class, 'editSlider'])->name('editslider');
 Route::get('/view-slider',[App\Http\Controllers\SliderController::class, 'viewSlider'])->name('viewslider');
 Route::match(['get','post'],'delete-slider/{id}',[App\Http\Controllers\SliderController::class, 'deleteSlider'])->name('deleteSlider');
+
+
 
 
 
@@ -76,4 +83,12 @@ Route::post('/add-event',[EventController::class,'storeEvent'])->name('storeEven
 Route::get('/delete-event/{id}',[EventController::class,'deleteEvent'])->name('eventDelete');
 Route::get('/edit-event/{id}',[EventController::class,'eventEdit'])->name('eventEdit');
 Route::post('/update-event/{id}',[EventController::class,'eventUpdate'])->name('eventUpdate');
+
+//Event Booking
+Route::match(['get','post'],'/cart/{id}',[EventController::class,'cart'])->name('cart');
+Route::match(['get','post'],'cart',[EventController::class,'viewCart'])->name('viewCart');
+Route::match(['get','post'],'cart/increment/{rowId}',[EventController::class,'incrementQty'])->name('incrementQty');
+Route::match(['get','post'],'cart/decrement/{rowId}',[EventController::class,'minusQty'])->name('minusQty');
+Route::match(['get','post'],'cart/delete/{rowId}',[EventController::class,'deleteCart'])->name('deleteCart');
+Route::match(['get','post'],'checkout',[EventController::class,'checkout'])->name('checkout');
 

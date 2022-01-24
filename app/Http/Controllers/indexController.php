@@ -11,7 +11,7 @@ class IndexController extends Controller
     public function index(){
         $sliders = Slider::where('status','1')->get();
         $sliderCount = Slider::where('status','1')->count();
-        $event = Event::where('status','active')->get();
+        $event = Event::where('status','active')->take(6)->get();
         return view('index')->with(compact('sliders','sliderCount','event'));
     }
 

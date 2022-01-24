@@ -2,12 +2,13 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\UserController;
+
 use App\Http\Controllers\backend\adminController;
+use App\Http\Controllers\backend\EventController;
 
 use App\Http\Controllers\backend\CategoriesController;
 use App\Http\Controllers\frontend\CategoriesShowController;
-
-use App\Http\Controllers\backend\EventController;
 
 /*
 |--------------------------------------------------------------------------
@@ -46,7 +47,11 @@ Route::get('/categories',[CategoriesShowController::class,'all_category'])->name
 
 Auth::routes();
 
+// User Controlling
+
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::match(['get', 'post'], '/home/profile',[UserController::class,'updateProfile'])->name('updateProfile');
+
 
 Route::get('/dashboard',[AdminController::class, 'index'])->name('admin.home');
 Route::get('/admin/login',[AdminController::class, 'loginForm'])->name('admin.login');
@@ -85,4 +90,5 @@ Route::match(['get','post'],'cart/increment/{rowId}',[EventController::class,'in
 Route::match(['get','post'],'cart/decrement/{rowId}',[EventController::class,'minusQty'])->name('minusQty');
 Route::match(['get','post'],'cart/delete/{rowId}',[EventController::class,'deleteCart'])->name('deleteCart');
 Route::match(['get','post'],'checkout',[EventController::class,'checkout'])->name('checkout');
+Route::match(['get','post'],'pay',[EventController::class,'pay'])->name('pay');
 

@@ -5,10 +5,13 @@ namespace App\Http\Controllers\backend;
 use File;
 
 use App\Models\Event;
+use App\Models\Orders;
 use App\Models\Category;
-use Illuminate\Support\Str;
 
+use App\Models\OrdersEvent;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Gloudemans\Shoppingcart\Facades\Cart;
@@ -180,13 +183,63 @@ class EventController extends Controller
     public function checkout()
     {
         if(Auth::check()){
-            $carts =Cart::content();
-        return $carts;
+            
+            
+        // return $carts;
+        return view('checkout');
         }
         else {
             return redirect()->route('login');
         }
         
+    }
+    public function pay(Request $request)
+    {
+        // $carts =Cart::content();
+        $user_id= Auth::user()->id;
+        // foreach($carts as $cart){
+        //     $order = new Orders;
+        //     $order->user_id =$user_id;
+            
+        //     $order->phone= '92308928';
+        //     $order->grand_total= Cart::total();
+        //     $order->payment_method="hello";
+        //     $order->transaction_id="hello";
+        //     $order->transaction_number="hello";
+        //     $order->save();
+        // }
+        // dd(Cart::total());
+        if($request->isMethod('post')){
+            $data = $request->all();
+            $order = new Orders;
+            $order->user_id =$user_id;
+            $order->user_email =$data['email'];
+            $order->phone= $data['phone'];
+            $order->grand_total= Cart::total();
+            $order->payment_method=$data['payment_method'];
+            $order->transaction_id=$data['transaction_id'];
+            $order->transaction_number=$data['transaction_number'];
+            $order->save();
+            $order_id = DB::getPdo()->lastInsertId();
+            $carts =Cart::content();
+            foreach($carts as $cart){
+                $orderEvt = new OrdersEvent;
+                $orderEvt->order_id =$order_id;
+                $orderEvt->user_id = $user_id;
+                $orderEvt->event_id =$cart->model->id;
+                $orderEvt->event_name= $cart->name;
+                $orderEvt->qty= $cart->qty;
+                $orderEvt->price=$cart->subtotal;
+                $orderEvt->save();
+
+            }
+            if(!empty($data['phone'])){
+                DB::table('users')->where('id',$user_id)->update(['phone'=>$data['phone']]);
+            }
+    		// echo "<pre>"; print_r($data); die;
+            Cart::destroy();
+            return redirect()->route('home');
+        }
     }
 
 }

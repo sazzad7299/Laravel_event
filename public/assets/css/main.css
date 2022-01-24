@@ -2281,3 +2281,9 @@ a.back-to-top:hover, a.back-to-top:focus {
   font-size: 20px;
   box-shadow: 4px 3px 4px #ccc;
 }
+.rocket{
+  display: inline;
+}
+.bKash{
+  display: none;
+}

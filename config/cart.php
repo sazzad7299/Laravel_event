@@ -4,6 +4,7 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+<<<<<<< HEAD
     | Gross price as base price
     |--------------------------------------------------------------------------
     |
@@ -16,6 +17,8 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+=======
+>>>>>>> 76b1d5f56409c0b0ba153904fadbb1da0f5ab1bb
     | Default tax rate
     |--------------------------------------------------------------------------
     |
@@ -24,7 +27,11 @@ return [
     |
     */
 
+<<<<<<< HEAD
     'tax' => 21,
+=======
+    'tax' => 0,
+>>>>>>> 76b1d5f56409c0b0ba153904fadbb1da0f5ab1bb
 
     /*
     |--------------------------------------------------------------------------
@@ -61,7 +68,11 @@ return [
     | Default number format
     |--------------------------------------------------------------------------
     |
+<<<<<<< HEAD
     | This defaults will be used for the formatted numbers if you don't
+=======
+    | This defaults will be used for the formated numbers if you don't
+>>>>>>> 76b1d5f56409c0b0ba153904fadbb1da0f5ab1bb
     | set them in the method call.
     |
     */
@@ -72,8 +83,16 @@ return [
 
         'decimal_point' => '.',
 
+<<<<<<< HEAD
         'thousand_separator' => ',',
 
     ],
 
 ];
+=======
+        'thousand_seperator' => ','
+
+    ],
+
+];
+>>>>>>> 76b1d5f56409c0b0ba153904fadbb1da0f5ab1bb

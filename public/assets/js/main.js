@@ -112,3 +112,57 @@ function update_amounts() {
         $('#inQuantity').val(qan);
     });
 }
+
+
+var quantitiy=0;
+$('.quantity-right-plus').click(function(e){
+    
+    // Stop acting like a button
+    e.preventDefault();
+    // Get the field name
+    var quantity = parseInt($('#quantity').val());
+    
+    // If is not undefined
+        
+        $('#quantity').val(quantity + 1);
+
+      
+        // Increment
+    
+});
+  
+$('.quantity-left-minus').click(function(e){
+  // Stop acting like a button
+  e.preventDefault();
+  // Get the field name
+  var quantity = parseInt($('#quantity').val());
+  
+  // If is not undefined
+
+      // Increment
+      if(quantity>0){
+      $('#quantity').val(quantity - 1);
+      }
+});
+
+$(".payment").click(function() {
+  if($("#rocket").is(':checked')){
+    $(".rocket").css("display", "inline");
+    $(".bKash").css("display", "none");
+  }else if($("#bKash").is(':checked')){
+    $(".bKash").css("display", "inline");
+    $(".rocket").css("display", "none");
+  }
+});
+function selectPaymentMethod() {
+  if($("#rocket").is(':checked') || $("#bKash").is(':checked')){
+  }
+  else{
+  alert("Select Payment Method First")
+      return false;
+  }
+   
+}
+function profile(){
+  alert("hello");
+}

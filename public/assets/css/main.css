@@ -2236,7 +2236,7 @@ a.back-to-top:hover, a.back-to-top:focus {
   color: rgb(7, 15, 88);
 }
 #singleDetails .shortDetails p span{
-  font-size: 60px;
+  font-size: 40px;
   color: orange;
   font-weight: 700;
 }
@@ -2248,4 +2248,42 @@ a.back-to-top:hover, a.back-to-top:focus {
   padding: 10px 0px;
   color: wheat;
   background-color: #00aced;
+}
+.cart_quantity_button .cart_quantity_up{
+  padding: 4px;
+  background: black;
+  font-size: 15px;
+  border: 2px solid orange;
+  color: white;
+  font-weight: 900;
+}
+.cart_quantity_button .cart_quantity_down{
+  padding: 4px;
+  background: black;
+  font-size: 15px;
+  border: 2px solid orange;
+  color: white;
+  font-weight: 900;
+}
+.cart_total{
+  position: relative;
+}
+.cartDelete {
+  position: absolute;
+  top: 11px;
+  right: 0px;
+  background: red;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  line-height: 16px;
+  color: white;
+  font-size: 20px;
+  box-shadow: 4px 3px 4px #ccc;
+}
+.rocket{
+  display: inline;
+}
+.bKash{
+  display: none;
 }

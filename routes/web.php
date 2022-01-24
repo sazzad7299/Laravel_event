@@ -3,17 +3,10 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\backend\adminController;
 use App\Http\Controllers\backend\CategoriesController;
-use App\Http\Controllers\frontend\CategoriesShowController;
-<<<<<<< HEAD
-use App\Http\Controllers\backend\EventController;
-=======
 use App\Http\Controllers\backend\EventController;
 use App\Http\Controllers\frontend\CategoriesShowController;
-use App\Http\Controllers\backend\EventController;
 
 
-
->>>>>>> 89e423f48e5640e156d6b7dbf7f9400bd014d525
 /*
 |--------------------------------------------------------------------------
 | Web Routes

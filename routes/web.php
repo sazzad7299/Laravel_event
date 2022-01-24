@@ -80,4 +80,3 @@ Route::post('/update-event/{id}',[EventController::class,'eventUpdate'])->name('
 
 //Event Booking
 
-Route::get('/cart/{id}',[CartController::class,'addToCart'])->name('add-cart');

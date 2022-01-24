@@ -6,7 +6,6 @@ use App\Http\Controllers\UserController;
 
 use App\Http\Controllers\backend\adminController;
 use App\Http\Controllers\backend\EventController;
-
 use App\Http\Controllers\backend\CategoriesController;
 use App\Http\Controllers\frontend\CategoriesShowController;
 

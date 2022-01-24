@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Event;
 use App\Models\Slider;
 use Illuminate\Http\Request;
-use App\Models\Event;
+// use App\Models\Event;
 
 class IndexController extends Controller
 {

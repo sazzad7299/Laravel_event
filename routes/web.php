@@ -6,11 +6,9 @@ use App\Http\Controllers\backend\adminController;
 
 use App\Http\Controllers\backend\CategoriesController;
 use App\Http\Controllers\frontend\CategoriesShowController;
-<<<<<<< HEAD
-use App\Http\Controllers\backend\EventController;
-=======
 
 use App\Http\Controllers\backend\EventController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -22,7 +20,6 @@ use App\Http\Controllers\backend\EventController;
 | contains the "web" middleware group. Now create something great!
 |
 */
->>>>>>> e5da470caf8da9c4437f9ec5881f2cbf43e057c1
 
 // Route::get('/',[App\Http\Controllers\IndexController::class, 'index'])->name('index');
 
@@ -72,7 +69,6 @@ Route::get('/edit-category/{id}',[CategoriesController::class,'editCategory'])->
 Route::post('/update-category/{id}',[CategoriesController::class,'updateCategory'])->name('updateCategory');
 
 
-
 //Event Routing
 Route::get('/event-all',[EventController::class,'allEvent'])->name('allEvent');
 Route::get('/event-form',[EventController::class,'addeventForm'])->name('addEventForm');
@@ -84,3 +80,4 @@ Route::post('/update-event/{id}',[EventController::class,'eventUpdate'])->name('
 
 //Event Booking
 
+Route::get('/cart/{id}',[CartController::class,'addToCart'])->name('add-cart');

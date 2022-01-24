@@ -18,6 +18,6 @@ class CategoriesShowController extends Controller
 
     function single_cat_page($id){
          $events=Event::where('category_id',$id)->orderBy('id','desc')->paginate(9);
-        return view('frontend.single_cat_event',['events'=>$events]);
+        return view('frontend.single_cat_event',['event'=>$events]);
     }
 }

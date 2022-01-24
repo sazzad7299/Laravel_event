@@ -2,30 +2,38 @@
 @section('content')
 <div class="dashboard " style="background:black;padding-top:70px">
 </div>
+
 <div class="container">
-    <div class="row " >
-        <div class="col-md-12">
-            <h5 class="text-center pb-5">Single Categories Event</h5>
-            <div class="row mb-5"> 
-                @if(count($events)>0)
-                    @foreach($events as $event)
-                    <div class="col-md-3">
-                        <div class="card">
-                          <a href="{{route('single_cat_page',['id'=>$event->id])}}"><img src="{{asset('images/event/'.$event->image)}}" class="card-img-top" alt="{{$event->title}}" height="250px" /></a>
-                          <div class="card-body">
-                            <h5 class="card-title"><a href="">{{$event->title}}</a></h5>
-                          </div>
-                        </div>
-                    </div>
-                    @endforeach
-                @else
-                <p class="alert alert-danger">No Category Found</p>
-                @endif
+
+    <div class="row">
+        @if(count($event)>0)
+        @foreach($event as $item)
+        <div class="col-xs-12 col-md-6 col-lg-4">
+          <div class="about-item">
+            <img class="img-fluid" src="{{ asset('images/event/'.$item->image) }}" alt="">
+            <div class="about-text">
+              <h3><a href="#">{{ $item->title }}</a></h3>
+              <p>{!! Str::limit($item->detail, 200)  !!}</p> <br>
+              @if($item->seat ==0)
+              <button type="button" class="btn btn-common btn-rm" disabled>Not Available</button>
+              <a class="btn btn-common btn-rm" href="{{ url('event/'.$item->id) }}">View Details</a>
+              @else
+              <a class="btn btn-common btn-rm" href="{{ url('cart/'.$item->id) }}">Book Now</a>
+              <a class="btn btn-common btn-rm" href="{{ url('event/'.$item->id) }}">View Details</a>
+              @endif
             </div>
-            <!-- Pagination -->
-            {{$events->links()}}
+          </div>
         </div>
-        <!-- Right SIdebar -->
+        @endforeach
+        @else
+        <p class="alert alert-danger">No Event Found</p>
+        @endif
+
+        <div>
+             <!-- Pagination -->
+             {{$event->links()}}
+        </div>
+      </div>
         
     </div>
 </div>

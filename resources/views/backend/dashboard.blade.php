@@ -43,7 +43,7 @@
                         <div class="col mr-2">
                             <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
                                 Total (Events)</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">status
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">
                                 {{ $count= DB::table('events')->count();}}
                             </div>
                         </div>

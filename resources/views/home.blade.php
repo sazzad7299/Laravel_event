@@ -20,13 +20,13 @@
             
                         <div class="time-entry hours"><span>00</span> On Going</div>
                         <div class="time-entry minutes"><span>00</span> Upcomming</div>
-                        <div class="time-entry seconds"><span><i class="lni lni-user"></i></span> Profile</div> </div>
+                        <div class="time-entry seconds"type="button" class="btn btn-primary" ><span><em class="lni lni-user"></em></span> Profile</div>
+                    </div>
                 </div>
                 <a href="pricing.html" class="btn btn-common wow fadeInUp" data-wow-delay="0.3s">Add to My Calender</a>
                 </div>
             </div>
             </div>
         </section>
-        <!-- Coundown Section End -->
     </div>    
 @endsection

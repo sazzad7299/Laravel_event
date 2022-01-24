@@ -34,6 +34,9 @@ Route::get('/view-slider',[App\Http\Controllers\SliderController::class, 'viewSl
 Route::match(['get','post'],'delete-slider/{id}',[App\Http\Controllers\SliderController::class, 'deleteSlider'])->name('deleteSlider');
 
 
+
+
+
 Route::get('/categories',[CategoriesShowController::class,'all_category'])->name('show_cat_all');
 Route::get('/single/category/{id}',[CategoriesShowController::class,'single_cat_page'])->name('single_cat_page');
 
@@ -90,4 +93,3 @@ Route::match(['get','post'],'cart/decrement/{rowId}',[EventController::class,'mi
 Route::match(['get','post'],'cart/delete/{rowId}',[EventController::class,'deleteCart'])->name('deleteCart');
 Route::match(['get','post'],'checkout',[EventController::class,'checkout'])->name('checkout');
 Route::match(['get','post'],'pay',[EventController::class,'pay'])->name('pay');
-

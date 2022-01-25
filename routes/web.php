@@ -61,11 +61,6 @@ Route::get('/admin/login',[AdminController::class, 'loginForm'])->name('admin.lo
 Route::post('/login-save',[AdminController::class, 'submit_login'])->name('admin.loginSave');
 Route::get('/login/logout',[AdminController::class, 'logout'])->name('admin.logout');
 
-
-
-
-
-
 //Category Controller
 Route::get('/category-all',[CategoriesController::class,'allCategory'])->name('allCategory');
 Route::get('/category-form',[CategoriesController::class,'addCategoryForm'])->name('addCategoryForm');
